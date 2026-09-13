@@ -126,6 +126,10 @@ def init_db():
             db.session.commit()
             print(f"[INIT] Created initial admin account for {admin_email}")
 
+# Automatically initialize database when WSGI boots
+with app.app_context():
+    init_db()
+
 # Portfolio Structured Data Store (Easy to update and maintain)
 PORTFOLIO_DATA = {
     "personal_info": {
@@ -284,6 +288,44 @@ PORTFOLIO_DATA = {
             "description": "Recognized for creative campus engagement, event planning, and innovative use of Gemini AI.",
             "image": "images/certificates/cert_google_freshers.jpg",
             "badge": "Google Ambassador"
+        }
+    ],
+    "gallery": [
+        {
+            "id": 1,
+            "title": "Professional Campus Portrait",
+            "tag": "Formal",
+            "image": "images/gallery/gallery_1.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Amity University Campus Moments",
+            "tag": "Campus Life",
+            "image": "images/gallery/gallery_2.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Formal Event & Technical Meet",
+            "tag": "Academic",
+            "image": "images/gallery/gallery_3.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Outdoor Activity & Hackathon Sessions",
+            "tag": "Activities",
+            "image": "images/gallery/gallery_4.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Casual Creative Workspace",
+            "tag": "Personal",
+            "image": "images/gallery/gallery_5.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Campus & Technical Event Moments",
+            "tag": "Event",
+            "image": "images/gallery/gallery_6.jpg"
         }
     ]
 }

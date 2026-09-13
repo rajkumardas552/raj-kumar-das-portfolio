@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raj Kumar Das | B.Tech CSE Student & Developer</title>
+  <meta name="description" content="Portfolio of Raj Kumar Das, a B.Tech Computer Science Engineering student interested in web development, AI, Machine Learning and cybersecurity.">
+  <meta name="keywords" content="Raj Kumar Das, B.Tech CSE, Software Developer, Amity University Jharkhand, AI ML Enthusiast, Web Development, Flask, Python">
+  <meta name="author" content="Raj Kumar Das">
+
+  <!-- Open Graph / Social & Image SEO Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Raj Kumar Das | B.Tech CSE Student & Developer">
+  <meta property="og:description" content="Portfolio of Raj Kumar Das, Computer Science Engineering student passionate about software development, AI/ML, and modern web applications.">
+  <meta property="og:image" content="{{ url_for('static', filename='images/profile.jpg', _external=True) }}">
+  <meta property="og:image:alt" content="Raj Kumar Das - B.Tech CSE Student & Software Developer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ url_for('static', filename='images/profile.jpg', _external=True) }}">
+
+  <!-- Schema.org Person Structured Data for Google Search & Google Images -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raj Kumar Das",
+    "url": "https://raj-kumar-das-portfolio-1.onrender.com",
+    "image": "https://raj-kumar-das-portfolio-1.onrender.com/static/images/profile.jpg",
+    "jobTitle": "Software Developer & B.Tech CSE Student",
+    "worksFor": {
+      "@type": "EducationalOrganization",
+      "name": "Amity University Jharkhand"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Amity University Jharkhand"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/raj-kumar-das-b444a127b",
+      "https://github.com/rajkumardas",
+      "https://www.facebook.com/share/1EtHNJc7uU/"
+    ]
+  }
+  </script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Dark Glassmorphism CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- Coder Motion Interactive Animated Background Canvas -->
+  <canvas id="coderBgCanvas"></canvas>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        Raj Kumar Das <span class="dot"></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-custom-primary btn-sm px-4" href="#contact">
+              <i class="bi bi-send-fill me-1"></i> Let's Connect
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="section-tag">
+            <i class="bi bi-code-slash"></i> Welcome to My Portfolio
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Raj Kumar Das</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            B.Tech CSE Student | Developer | AI & ML Enthusiast
+          </h2>
+          <p class="hero-bio">
+            I’m a Computer Science Engineering student passionate about building practical software solutions, exploring AI and Machine Learning, and developing modern web applications.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#projects" class="btn btn-custom-primary">
+              <i class="bi bi-folder-fill"></i> View My Projects
+            </a>
+            <a href="#contact" class="btn btn-custom-outline">
+              <i class="bi bi-envelope-fill"></i> Contact Me
+            </a>
+          </div>
+
+          <div class="social-links-list">
+            <a href="{{ data.personal_info.social.github }}" target="_blank" class="social-icon-btn" title="GitHub" aria-label="GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="{{ data.personal_info.social.linkedin }}" target="_blank" class="social-icon-btn" title="LinkedIn" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="{{ data.personal_info.social.facebook }}" target="_blank" class="social-icon-btn" title="Facebook" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="{{ data.personal_info.social.instagram }}" target="_blank" class="social-icon-btn" title="Instagram" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="mailto:{{ data.personal_info.social.email }}" class="social-icon-btn" title="Email" aria-label="Email">
+              <i class="bi bi-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center text-lg-end">
+          <!-- Hero Profile Image & Floating Status Badges -->
+          <div class="hero-profile-container position-relative d-inline-block text-center mt-4 mt-lg-0">
+            <div class="hero-avatar-frame glass-card p-3 position-relative">
+              <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Raj Kumar Das - B.Tech CSE Student and Software Developer at Amity University Jharkhand" title="Raj Kumar Das - Software Developer & AI/ML Enthusiast" class="hero-avatar-img shadow-lg">
+            </div>
+
+            <!-- Floating Glassmorphic Badges -->
+            <div class="floating-badge badge-top-right glass-card">
+              <i class="bi bi-patch-check-fill text-cyan me-1"></i> Gemini Certified
+            </div>
+            <div class="floating-badge badge-bottom-left glass-card">
+              <i class="bi bi-trophy-fill text-warning me-1"></i> SIH 2026 Contributor
+            </div>
+            <div class="floating-badge badge-bottom-right glass-card">
+              <i class="bi bi-code-square text-indigo me-1"></i> Python & Flask
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-person-badge"></i> Getting to Know Me</div>
+        <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+        <p class="section-subtitle">Passionate student developer committed to continuous learning and solving real-world problems.</p>
+      </div>
+
+      <div class="row g-4 align-items-center mt-2">
+        <div class="col-lg-7">
+          <div class="glass-card p-4 p-md-5">
+            <h3 class="h4 mb-3 text-bright">Hello! I'm Raj Kumar Das.</h3>
+            <p class="about-text-content mb-3">
+              I am a Computer Science Engineering student currently in my <strong>3rd Semester</strong> at <strong>Amity University Jharkhand (Batch 2025–2029)</strong>. My primary interest lies at the intersection of software development, modern web technologies, artificial intelligence, machine learning, and network cybersecurity.
+            </p>
+            <p class="about-text-content mb-3">
+              I am driven by curiosity and enjoy turning complex logic into user-friendly digital applications. Whether designing frontend dashboards or engineering machine learning threat detection models, I thrive on hands-on creation.
+            </p>
+            <h4 class="h6 text-bright mt-4 mb-3"><i class="bi bi-stars text-warning me-2"></i> What I Enjoy Doing:</h4>
+            <div class="row g-2">
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2 about-feature-bullet mb-2">
+                  <i class="bi bi-check-circle-fill text-cyan"></i> Building practical software projects
+                </div>
+                <div class="d-flex align-items-center gap-2 about-feature-bullet mb-2">
+                  <i class="bi bi-check-circle-fill text-cyan"></i> Learning new frameworks & technologies
+                </div>
+                <div class="d-flex align-items-center gap-2 about-feature-bullet mb-2">
+                  <i class="bi bi-check-circle-fill text-cyan"></i> Participating in national hackathons
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2 about-feature-bullet mb-2">
+                  <i class="bi bi-check-circle-fill text-cyan"></i> Solving programming & algorithmic problems
+                </div>
+                <div class="d-flex align-items-center gap-2 about-feature-bullet mb-2">
+                  <i class="bi bi-check-circle-fill text-cyan"></i> Exploring AI-based intelligent solutions
+                </div>
+                <div class="d-flex align-items-center gap-2 about-feature-bullet mb-2">
+                  <i class="bi bi-check-circle-fill text-cyan"></i> Designing intuitive user interfaces
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <!-- Stats Cards Grid -->
+          <div class="row g-3 mb-4">
+            {% for stat in data.stats %}
+            <div class="col-6">
+              <div class="stat-card">
+                <div class="stat-number">{{ stat.number }}</div>
+                <div class="stat-label">{{ stat.label }}</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <!-- Code Terminal Widget -->
+          <div class="code-terminal-card glass-card">
+            <div class="terminal-header">
+              <span class="terminal-btn btn-red"></span>
+              <span class="terminal-btn btn-yellow"></span>
+              <span class="terminal-btn btn-green"></span>
+              <span class="terminal-title">developer_profile.py</span>
+            </div>
+            <div class="terminal-body" style="font-size: 0.82rem;">
+              <p><span class="code-keyword">class</span> <span class="code-val">SoftwareDeveloper</span>:</p>
+              <p class="ps-3"><span class="code-keyword">def</span> <span class="code-val">__init__</span>(self):</p>
+              <p class="ps-4">self.name = <span class="code-string">"Raj Kumar Das"</span></p>
+              <p class="ps-4">self.degree = <span class="code-string">"B.Tech CSE Core"</span></p>
+              <p class="ps-4">self.university = <span class="code-string">"Amity University Jharkhand"</span></p>
+              <p class="ps-4">self.batch = <span class="code-string">"2025-2029"</span></p>
+              <p class="ps-4">self.focus = [<span class="code-string">"Web Dev"</span>, <span class="code-string">"AI/ML"</span>, <span class="code-string">"Cybersecurity"</span>]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section-padding bg-secondary-gradient">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-tools"></i> Technical Expertise</div>
+        <h2 class="section-title">My <span class="text-gradient">Skills</span></h2>
+        <p class="section-subtitle">A comprehensive breakdown of programming languages, web stacks, AI tools, and design principles I utilize.</p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        {% set icons = {
+          'Programming': 'bi-code-square',
+          'Web Development': 'bi-globe',
+          'AI / ML': 'bi-cpu',
+          'Tools': 'bi-box-seam',
+          'Design': 'bi-palette'
+        } %}
+        {% for category, skills_list in data.skills.items() %}
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card skill-category-card">
+            <div class="skill-category-header">
+              <div class="skill-icon-wrapper">
+                <i class="bi {{ icons.get(category, 'bi-layers') }}"></i>
+              </div>
+              <h3 class="h5 mb-0 text-bright">{{ category }}</h3>
+            </div>
+            <div class="skill-badges-container">
+              {% for skill in skills_list %}
+              <span class="skill-pill">
+                <i class="bi bi-lightning-charge-fill me-1 text-warning"></i> {{ skill }}
+              </span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-collection-play"></i> Featured Work</div>
+        <h2 class="section-title">My <span class="text-gradient">Projects</span></h2>
+        <p class="section-subtitle">Real-world applications spanning web platforms, network security AI models, and deep learning benchmarks.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="Web">Web Development</button>
+        <button class="filter-btn" data-filter="AI/ML">AI / Machine Learning</button>
+        <button class="filter-btn" data-filter="Python">Python</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="row g-4" id="projectsGrid">
+        {% for project in data.projects %}
+        <div class="col-lg-4 col-md-6 project-item" data-category="{{ project.category }}" data-tech="{{ project.tech | join(',') }}">
+          <div class="glass-card project-card">
+            <div class="project-header-visual">
+              <span class="project-category-badge">{{ project.category }}</span>
+              <div class="text-center p-3">
+                <i class="bi {% if project.id == 1 %}bi-cart-check{% elif project.id == 2 %}bi-shield-lock{% else %}bi-cpu{% endif %} display-4 text-info"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="h5 text-bright mb-2">{{ project.title }}</h3>
+              <p class="text-muted small mb-3">{{ project.description }}</p>
+
+              <div class="project-tech-tags">
+                {% for tech in project.tech %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+              </div>
+
+              <div class="mb-3">
+                <h4 class="h6 text-dim small mb-2"><i class="bi bi-check2-square text-success me-1"></i> Key Features:</h4>
+                <ul class="list-unstyled text-muted small mb-0">
+                  {% for feat in project.features[:3] %}
+                  <li class="mb-1">• {{ feat }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              <div class="project-links mt-auto pt-3 border-top border-secondary">
+                <a href="{{ project.demo_url }}" class="btn btn-sm btn-custom-primary flex-grow-1 text-center" target="_blank">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> Live Demo
+                </a>
+                <a href="{{ project.github_url }}" class="btn btn-sm btn-custom-outline flex-grow-1 text-center" target="_blank">
+                  <i class="bi bi-github me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications" class="section-padding bg-secondary-gradient">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-patch-check-fill"></i> Verified Qualifications</div>
+        <h2 class="section-title">Certifications & <span class="text-gradient">Licenses</span></h2>
+        <p class="section-subtitle">Official certificates and professional skill assessments earned from leading organizations and platforms.</p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        {% for cert in data.certifications %}
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card h-100 d-flex flex-column overflow-hidden position-relative">
+            
+            <!-- Certificate Image Thumbnail -->
+            <div class="cert-thumbnail-box position-relative btn-view-cert" style="height: 220px; background: rgba(0,0,0,0.4); cursor: pointer;" 
+                 data-image="{{ url_for('static', filename=cert.image) }}"
+                 data-title="{{ cert.title }}"
+                 data-issuer="{{ cert.issuer }}">
+              <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}" class="w-100 h-100 object-fit-cover transition-transform">
+              <div class="cert-overlay d-flex align-items-center justify-content-center">
+                <span class="btn btn-sm btn-custom-primary rounded-pill shadow">
+                  <i class="bi bi-eye-fill me-1"></i> View Certification
+                </span>
+              </div>
+            </div>
+
+            <!-- Certificate Details -->
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-indigo text-bright px-3 py-1 rounded-pill" style="background: rgba(99,102,241,0.2); border:1px solid var(--accent-indigo);">{{ cert.badge }}</span>
+                <span class="text-cyan small fw-semibold"><i class="bi bi-calendar3 me-1"></i> {{ cert.date }}</span>
+              </div>
+
+              <h3 class="h5 text-bright mb-1">{{ cert.title }}</h3>
+              <h4 class="h6 text-dim mb-3"><i class="bi bi-building me-1"></i> {{ cert.issuer }}</h4>
+              
+              <p class="text-muted small mb-3 flex-grow-1">{{ cert.description }}</p>
+
+              {% if cert.credential_id %}
+              <div class="p-2 mb-3 rounded bg-dark border border-secondary text-dim small font-monospace">
+                <i class="bi bi-shield-check text-success me-1"></i> {{ cert.credential_id }}
+              </div>
+              {% endif %}
+
+              <button class="btn btn-sm btn-custom-outline w-100 mt-auto justify-content-center btn-view-cert" 
+                      data-image="{{ url_for('static', filename=cert.image) }}"
+                      data-title="{{ cert.title }}"
+                      data-issuer="{{ cert.issuer }}">
+                <i class="bi bi-file-earmark-image me-1"></i> View Certification
+              </button>
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-images"></i> Campus & Personal Moments</div>
+        <h2 class="section-title">Photo <span class="text-gradient">Gallery</span></h2>
+        <p class="section-subtitle">A visual look into campus life, hackathons, technical sessions, and personal achievements.</p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        {% for photo in data.gallery %}
+        <div class="col-lg-4 col-md-6">
+          <div class="glass-card h-100 d-flex flex-column overflow-hidden position-relative">
+            
+            <!-- Gallery Thumbnail Box -->
+            <div class="cert-thumbnail-box position-relative btn-view-cert" style="height: 250px; background: rgba(0,0,0,0.4); cursor: pointer;" 
+                 data-image="{{ url_for('static', filename=photo.image) }}"
+                 data-title="{{ photo.title }}"
+                 data-issuer="Tag: {{ photo.tag }}">
+              <img src="{{ url_for('static', filename=photo.image) }}" alt="{{ photo.title }}" class="w-100 h-100 object-fit-cover transition-transform">
+              <div class="cert-overlay d-flex align-items-center justify-content-center">
+                <span class="btn btn-sm btn-custom-primary rounded-pill shadow">
+                  <i class="bi bi-arrows-angle-expand me-1"></i> View Full Photo
+                </span>
+              </div>
+            </div>
+
+            <!-- Photo Details -->
+            <div class="p-3 d-flex justify-content-between align-items-center">
+              <h3 class="h6 text-bright mb-0">{{ photo.title }}</h3>
+              <span class="badge bg-indigo text-bright px-3 py-1 rounded-pill" style="background: rgba(99,102,241,0.2); border:1px solid var(--accent-indigo);">{{ photo.tag }}</span>
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-briefcase"></i> Journey & Roles</div>
+        <h2 class="section-title">Experience & <span class="text-gradient">Hackathons</span></h2>
+        <p class="section-subtitle">Key technical contributions, collaborative projects, and hackathon achievements.</p>
+      </div>
+
+      <div class="timeline mt-4">
+        {% for exp in data.experience %}
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-content">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
+              <span class="timeline-date"><i class="bi bi-calendar-event me-1"></i> {{ exp.period }}</span>
+              <span class="badge bg-indigo text-bright px-3 py-1 rounded-pill" style="background: rgba(99,102,241,0.2); border: 1px solid var(--accent-indigo);">{{ exp.team }}</span>
+            </div>
+            <h3 class="h4 text-bright mb-1">{{ exp.title }}</h3>
+            <h4 class="h6 text-gradient mb-3">{{ exp.role }} — Project: {{ exp.project }}</h4>
+            <p class="text-muted mb-0">{{ exp.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS SECTION -->
+  <section id="achievements" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-trophy"></i> Recognition & Milestones</div>
+        <h2 class="section-title">My <span class="text-gradient">Achievements</span></h2>
+        <p class="section-subtitle">Highlights from competitions, technical learning milestones, and academic activities.</p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        {% for item in data.achievements %}
+        <div class="col-md-6 col-lg-3">
+          <div class="glass-card p-4 h-100 text-center">
+            <div class="mb-3 text-warning display-6">
+              <i class="bi {% if item.category == 'Hackathon' %}bi-award-fill{% elif item.category == 'Development' %}bi-code-slash{% elif item.category == 'AI / ML' %}bi-cpu-fill{% else %}bi-star-fill{% endif %}"></i>
+            </div>
+            <span class="badge bg-secondary mb-2 text-uppercase font-monospace" style="font-size: 0.7rem;">{{ item.category }}</span>
+            <h3 class="h6 text-bright mb-2">{{ item.title }}</h3>
+            <p class="text-muted small mb-0">{{ item.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="section-padding bg-secondary-gradient">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-mortarboard"></i> Academic Background</div>
+        <h2 class="section-title">Education <span class="text-gradient">Timeline</span></h2>
+        <p class="section-subtitle">My academic journey in Computer Science Engineering.</p>
+      </div>
+
+      <div class="timeline mt-4">
+        {% for edu in data.education %}
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-content">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
+              <span class="timeline-date"><i class="bi bi-calendar3 me-1"></i> {{ edu.period }}</span>
+              <span class="badge bg-success text-bright px-3 py-1 rounded-pill" style="background: rgba(16,185,129,0.2); border:1px solid #10b981;">{{ edu.status }}</span>
+            </div>
+            <h3 class="h4 text-bright mb-1">{{ edu.degree }}</h3>
+            <h4 class="h6 text-cyan mb-3"><i class="bi bi-building me-1"></i> {{ edu.institution }}</h4>
+            <p class="text-muted mb-0">{{ edu.highlights }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME SECTION -->
+  <section id="resume" class="section-padding">
+    <div class="container">
+      <div class="resume-banner glass-card">
+        <div class="mb-3">
+          <i class="bi bi-file-earmark-pdf display-4 text-warning"></i>
+        </div>
+        <h2 class="text-bright h2 mb-3">Want to know more about me?</h2>
+        <p class="text-muted max-w-600 mx-auto mb-4">
+          Check out my formal resume for a detailed view of my coursework, skills, hackathon achievements, and project technicalities.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="{{ url_for('download_resume') }}" class="btn btn-custom-primary" download>
+            <i class="bi bi-download"></i> Download Resume
+          </a>
+          <a href="{{ resume_url }}" class="btn btn-custom-outline" target="_blank">
+            <i class="bi bi-eye"></i> View Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section-padding bg-secondary-gradient">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="bi bi-chat-dots"></i> Get in Touch</div>
+        <h2 class="section-title">Let's <span class="text-gradient">Work Together</span></h2>
+        <p class="section-subtitle">Have a project, hackathon proposal, or software inquiry? Send me a message below!</p>
+      </div>
+
+      <div class="row g-5 mt-2 justify-content-center">
+        <div class="col-lg-7">
+          <div class="glass-card p-4 p-md-5">
+            <form id="contactForm" novalidate>
+
+              <!-- Anti-Spam Honeypot Field (Hidden) -->
+              <input type="text" name="website_url" id="website_url" class="website-hp-field" tabindex="-1" autocomplete="off">
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label text-bright small fw-semibold">Your Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-dark" id="name" name="name" placeholder="e.g. Rahul Sharma" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label text-bright small fw-semibold">Your Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control form-control-dark" id="email" name="email" placeholder="name@domain.com" required>
+                </div>
+                <div class="col-12">
+                  <label for="subject" class="form-label text-bright small fw-semibold">Subject <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-dark" id="subject" name="subject" placeholder="Project Collaboration / Query" required>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label text-bright small fw-semibold">Message <span class="text-danger">*</span></label>
+                  <textarea class="form-control form-control-dark" id="message" name="message" rows="5" placeholder="Write your message details here..." required></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" id="submitBtn" class="btn btn-custom-primary w-100 justify-content-center">
+                    <i class="bi bi-paperplane-fill me-2"></i> Send Message
+                  </button>
+                </div>
+              </div>
+
+              <!-- Form Feedback Placeholder -->
+              <div id="formFeedback" class="mt-3"></div>
+
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-4">
+            <div class="glass-card p-4 d-flex align-items-center gap-3">
+              <div class="skill-icon-wrapper" style="width: 50px; height: 50px; font-size: 1.5rem;">
+                <i class="bi bi-envelope-at"></i>
+              </div>
+              <div>
+                <h3 class="h6 text-dim mb-1">Direct Email</h3>
+                <a href="mailto:{{ data.personal_info.social.email }}" class="text-bright fw-semibold">{{ data.personal_info.social.email }}</a>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 d-flex align-items-center gap-3">
+              <div class="skill-icon-wrapper" style="width: 50px; height: 50px; font-size: 1.5rem; color: #25D366; background: rgba(37,211,102,0.15);">
+                <i class="bi bi-whatsapp"></i>
+              </div>
+              <div>
+                <h3 class="h6 text-dim mb-1">WhatsApp Direct QR</h3>
+                <button type="button" class="btn btn-sm btn-outline-success border-0 p-0 fw-semibold text-bright" data-bs-toggle="modal" data-bs-target="#whatsappModal">
+                  Scan QR to Connect <i class="bi bi-qr-code-scan ms-1"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 d-flex align-items-center gap-3">
+              <div class="skill-icon-wrapper" style="width: 50px; height: 50px; font-size: 1.5rem; color: #0077b5; background: rgba(0,119,181,0.15);">
+                <i class="bi bi-linkedin"></i>
+              </div>
+              <div>
+                <h3 class="h6 text-dim mb-1">LinkedIn Network</h3>
+                <a href="{{ data.personal_info.social.linkedin }}" target="_blank" class="text-bright fw-semibold">Connect on LinkedIn</a>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 d-flex align-items-center gap-3">
+              <div class="skill-icon-wrapper" style="width: 50px; height: 50px; font-size: 1.5rem; color: #1877F2; background: rgba(24,119,242,0.15);">
+                <i class="bi bi-facebook"></i>
+              </div>
+              <div>
+                <h3 class="h6 text-dim mb-1">Facebook Profile</h3>
+                <a href="{{ data.personal_info.social.facebook }}" target="_blank" class="text-bright fw-semibold">Visit Facebook Profile</a>
+              </div>
+            </div>
+
+            <div class="glass-card p-4 d-flex align-items-center gap-3">
+              <div class="skill-icon-wrapper" style="width: 50px; height: 50px; font-size: 1.5rem; color: #fff; background: rgba(255,255,255,0.1);">
+                <i class="bi bi-github"></i>
+              </div>
+              <div>
+                <h3 class="h6 text-dim mb-1">GitHub Repositories</h3>
+                <a href="{{ data.personal_info.social.github }}" target="_blank" class="text-bright fw-semibold">github.com/rajkumardas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-custom">
+    <div class="container text-center">
+      <h3 class="h4 text-bright mb-2">Raj Kumar Das</h3>
+      <p class="text-muted small mb-4">B.Tech CSE Student | Developer | AI/ML Enthusiast</p>
+
+      <div class="d-flex justify-content-center gap-4 mb-4 flex-wrap">
+        <a href="#home" class="text-muted small">Home</a>
+        <a href="#about" class="text-muted small">About</a>
+        <a href="#skills" class="text-muted small">Skills</a>
+        <a href="#projects" class="text-muted small">Projects</a>
+        <a href="#certifications" class="text-muted small">Certifications</a>
+        <a href="#gallery" class="text-muted small">Gallery</a>
+        <a href="#contact" class="text-muted small">Contact</a>
+        <a href="{{ url_for('admin_login') }}" class="text-dim small"><i class="bi bi-lock me-1"></i> Admin</a>
+      </div>
+
+      <div class="d-flex justify-content-center gap-3 mb-4">
+        <a href="{{ data.personal_info.social.github }}" target="_blank" class="social-icon-btn" style="width: 36px; height: 36px; font-size: 0.9rem;"><i class="bi bi-github"></i></a>
+        <a href="{{ data.personal_info.social.linkedin }}" target="_blank" class="social-icon-btn" style="width: 36px; height: 36px; font-size: 0.9rem;"><i class="bi bi-linkedin"></i></a>
+        <a href="{{ data.personal_info.social.facebook }}" target="_blank" class="social-icon-btn" style="width: 36px; height: 36px; font-size: 0.9rem;"><i class="bi bi-facebook"></i></a>
+        <a href="{{ data.personal_info.social.instagram }}" target="_blank" class="social-icon-btn" style="width: 36px; height: 36px; font-size: 0.9rem;"><i class="bi bi-instagram"></i></a>
+        <a href="mailto:{{ data.personal_info.social.email }}" class="social-icon-btn" style="width: 36px; height: 36px; font-size: 0.9rem;"><i class="bi bi-envelope"></i></a>
+      </div>
+
+      <p class="text-dim small mb-0">© 2026 Raj Kumar Das. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CERTIFICATE LIGHTBOX MODAL -->
+  <div class="modal fade" id="certificateModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-card border-secondary text-main glass-card">
+        <div class="modal-header border-secondary">
+          <div>
+            <h5 class="modal-title text-bright mb-0" id="certModalTitle">Certificate View</h5>
+            <small class="text-cyan fw-semibold" id="certModalIssuer"></small>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-3">
+          <img id="certModalImg" src="" alt="Certificate View" class="img-fluid rounded shadow-lg border border-secondary" style="max-height: 80vh; object-fit: contain;">
+        </div>
+        <div class="modal-footer border-secondary">
+          <a id="certModalDownloadBtn" href="" download class="btn btn-custom-primary btn-sm">
+            <i class="bi bi-download me-1"></i> Download Certificate Image
+          </a>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  <!-- WHATSAPP QR MODAL -->
+  <div class="modal fade" id="whatsappModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-card border-success text-main glass-card">
+        <div class="modal-header border-success">
+          <h5 class="modal-title text-bright"><i class="bi bi-whatsapp text-success me-2"></i> WhatsApp Contact QR</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-4">
+          <img src="{{ url_for('static', filename='images/whatsapp_qr.jpg') }}" alt="Raj Kumar WhatsApp QR" class="img-fluid rounded-4 shadow-lg border border-secondary" style="max-width: 280px;">
+          <p class="text-muted small mt-3 mb-0">Scan this QR code using your WhatsApp camera to connect directly with Raj Kumar Das!</p>
+        </div>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <!-- Custom Portfolio JS -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('click', (e) => {
+        const certBtn = e.target.closest('.btn-view-cert');
+        if (certBtn) {
+          const imageSrc = certBtn.getAttribute('data-image');
+          const title = certBtn.getAttribute('data-title');
+          const issuer = certBtn.getAttribute('data-issuer');
+
+          if (imageSrc) {
+            document.getElementById('certModalImg').src = imageSrc;
+            document.getElementById('certModalTitle').textContent = title || 'Certificate View';
+            document.getElementById('certModalIssuer').textContent = issuer || '';
+            document.getElementById('certModalDownloadBtn').href = imageSrc;
+            const modal = new bootstrap.Modal(document.getElementById('certificateModal'));
+            modal.show();
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
