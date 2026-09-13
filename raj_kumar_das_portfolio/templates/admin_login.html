@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal Login | Raj Kumar Das Portfolio</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom Dark CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100 py-5">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+
+        <div class="text-center mb-4">
+          <a href="{{ url_for('index') }}" class="navbar-brand justify-content-center fs-3 mb-2">
+            Raj Kumar Das <span class="dot"></span>
+          </a>
+          <p class="text-muted small">Admin Inbox & Dashboard Portal Authentication</p>
+        </div>
+
+        <div class="glass-card p-4 p-md-5">
+
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="skill-icon-wrapper">
+              <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            <div>
+              <h1 class="h4 text-bright mb-0">Admin Sign In</h1>
+              <p class="text-dim small mb-0">Access protected inbox & analytics</p>
+            </div>
+          </div>
+
+          <!-- Flash Messages -->
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show border-0 small" role="alert">
+                  <i class="bi bi-info-circle-fill me-2"></i> {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          <form action="{{ url_for('admin_login') }}" method="POST">
+            <div class="mb-3">
+              <label for="email" class="form-label text-bright small fw-semibold">Admin Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text bg-dark border-secondary text-muted"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control form-control-dark" id="email" name="email" placeholder="admin@rajkumardas.dev" required autofocus>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="password" class="form-label text-bright small fw-semibold">Password</label>
+              <div class="input-group">
+                <span class="input-group-text bg-dark border-secondary text-muted"><i class="bi bi-key"></i></span>
+                <input type="password" class="form-control form-control-dark" id="password" name="password" placeholder="••••••••••••" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-custom-primary w-100 justify-content-center py-3">
+              <i class="bi bi-box-arrow-in-right me-2"></i> Authenticate & Enter
+            </button>
+          </form>
+
+          <div class="mt-4 pt-3 border-top border-secondary text-center">
+            <a href="{{ url_for('index') }}" class="text-muted small">
+              <i class="bi bi-arrow-left me-1"></i> Back to Public Portfolio
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+</body>
+</html>
