@@ -71,7 +71,6 @@
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
@@ -397,46 +396,6 @@
     </div>
   </section>
 
-  <!-- GALLERY SECTION -->
-  <section id="gallery" class="section-padding">
-    <div class="container">
-      <div class="text-center">
-        <div class="section-tag"><i class="bi bi-images"></i> Campus & Personal Moments</div>
-        <h2 class="section-title">Photo <span class="text-gradient">Gallery</span></h2>
-        <p class="section-subtitle">A visual look into campus life, hackathons, technical sessions, and personal achievements.</p>
-      </div>
-
-      <div class="row g-4 mt-2">
-        {% for photo in data.gallery %}
-        <div class="col-lg-4 col-md-6">
-          <div class="glass-card h-100 d-flex flex-column overflow-hidden position-relative">
-            
-            <!-- Gallery Thumbnail Box -->
-            <div class="cert-thumbnail-box position-relative btn-view-cert" style="height: 250px; background: rgba(0,0,0,0.4); cursor: pointer;" 
-                 data-image="{{ url_for('static', filename=photo.image) }}"
-                 data-title="{{ photo.title }}"
-                 data-issuer="Tag: {{ photo.tag }}">
-              <img src="{{ url_for('static', filename=photo.image) }}" alt="{{ photo.title }}" class="w-100 h-100 object-fit-cover transition-transform">
-              <div class="cert-overlay d-flex align-items-center justify-content-center">
-                <span class="btn btn-sm btn-custom-primary rounded-pill shadow">
-                  <i class="bi bi-arrows-angle-expand me-1"></i> View Full Photo
-                </span>
-              </div>
-            </div>
-
-            <!-- Photo Details -->
-            <div class="p-3 d-flex justify-content-between align-items-center">
-              <h3 class="h6 text-bright mb-0">{{ photo.title }}</h3>
-              <span class="badge bg-indigo text-bright px-3 py-1 rounded-pill" style="background: rgba(99,102,241,0.2); border:1px solid var(--accent-indigo);">{{ photo.tag }}</span>
-            </div>
-
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
   <!-- EXPERIENCE SECTION -->
   <section id="experience" class="section-padding">
     <div class="container">
@@ -661,7 +620,6 @@
         <a href="#skills" class="text-muted small">Skills</a>
         <a href="#projects" class="text-muted small">Projects</a>
         <a href="#certifications" class="text-muted small">Certifications</a>
-        <a href="#gallery" class="text-muted small">Gallery</a>
         <a href="#contact" class="text-muted small">Contact</a>
         <a href="{{ url_for('admin_login') }}" class="text-dim small"><i class="bi bi-lock me-1"></i> Admin</a>
       </div>
